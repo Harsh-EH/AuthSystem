@@ -38,6 +38,7 @@ app.use(cookieParser());
 // ✅ Allow credentials & restrict to your frontend domains
 const allowedOrigins = [
   "http://localhost:3000",
+  "*"
    // 🔁 Replace with actual Vercel frontend URL
 ];
 
