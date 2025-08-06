@@ -61,11 +61,17 @@ exports.login = async (req, res) => {
 
     const token = createToken({ id: user._id });
 
+    // res.cookie("token", token, {
+    //   httpOnly: true,
+    //   secure: process.env.NODE_ENV === "production",
+    //   sameSite: "Strict",
+    //   maxAge: 24 * 60 * 60 * 1000 // 1 day
+    // });
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "Strict",
-      maxAge: 24 * 60 * 60 * 1000 // 1 day
+      secure: true,         // ✅ Required for HTTPS (Render is HTTPS)
+      sameSite: "None",     // ✅ Required for cross-origin
+      maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
     // 📧 Send login email
