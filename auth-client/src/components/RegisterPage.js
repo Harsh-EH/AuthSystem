@@ -24,7 +24,7 @@ const RegisterPage = () => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", data);
+      const res = await axios.post("https://authsystem-ms5i.onrender.com/api/auth/register", data);
       setMessage("Registration successful! Redirecting to login...");
       setError("");
 

@@ -24,7 +24,7 @@ const LoginPage = () => {
   // ✅ Clear session (cookie) if user opens or navigates back to this page
   useEffect(() => {
     axios
-      .post("http://localhost:5000/api/auth/logout", {}, { withCredentials: true })
+      .post("https://authsystem-ms5i.onrender.com/api/auth/logout", {}, { withCredentials: true })
       .then(() => {
         console.log("Token cleared on navigating to login page");
       })
@@ -35,7 +35,7 @@ const LoginPage = () => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", data, {
+      const res = await axios.post("https://authsystem-ms5i.onrender.com/api/auth/login", data, {
         withCredentials: true,
       });
       setMessage("Login successful! Redirecting...");

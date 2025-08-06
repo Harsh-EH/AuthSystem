@@ -22,7 +22,7 @@ const ForgotPasswordPage = () => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/forgot-password", data);
+      const res = await axios.post("https://authsystem-ms5i.onrender.com/api/auth/forgot-password", data);
       setMessage("Reset link sent! Redirecting to login...");
       setError("");
 

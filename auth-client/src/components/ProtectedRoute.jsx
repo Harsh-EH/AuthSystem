@@ -9,7 +9,7 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        await axios.get("http://localhost:5000/api/auth/dashboard", {
+        await axios.get("https://authsystem-ms5i.onrender.com/api/auth/dashboard", {
           withCredentials: true,
         });
         setIsAuth(true);

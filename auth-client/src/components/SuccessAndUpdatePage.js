@@ -28,7 +28,7 @@ const SuccessAndUpdatePage = () => {
   // ✅ Handle Logout
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:5000/api/auth/logout", {}, {
+      await axios.post("https://authsystem-ms5i.onrender.com/api/auth/logout", {}, {
         withCredentials: true, // Required for cookie deletion
       });
       navigate("/");
@@ -40,7 +40,7 @@ const SuccessAndUpdatePage = () => {
   // ✅ Handle Password Update
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/update-password", data, {
+      const res = await axios.post("https://authsystem-ms5i.onrender.com/api/auth/update-password", data, {
         withCredentials: true,
       });
       setMessage("Password updated successfully!");
